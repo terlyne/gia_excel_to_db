@@ -26,6 +26,6 @@ async def process_excel_file(file_stream):
         date = row[4]
         juries_id = str(row[5]).split(" ")
 
-        save_values(student_id, student_name, topic, potok, date, juries_id)
+        await save_values(student_id, student_name, topic, potok, date, juries_id)
 
     workbook.close()
