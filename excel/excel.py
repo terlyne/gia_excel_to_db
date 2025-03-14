@@ -1,5 +1,5 @@
 from openpyxl import load_workbook
-from database.crud import save_students
+from database.crud import save_values
 from database.db import Jury
 
 async def process_excel_file(file_stream):
@@ -26,6 +26,6 @@ async def process_excel_file(file_stream):
         date = row[4]
         juries_id = str(row[5]).split(" ")
 
-        save_students(student_id, student_name, topic, potok, date, juries_id)
+        save_values(student_id, student_name, topic, potok, date, juries_id)
 
     workbook.close()
